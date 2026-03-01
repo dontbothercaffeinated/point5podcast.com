@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POINT5 Podcast</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- For .png file -->
+  <link rel="icon" href="favicon.png" type="image/png">
+
+</head>
+<body>
+  <header>
+    <h1 class="sr-only" id="header-title">POINT5 Podcast</h1>
+    <img id="header-logo" src="logo.png" alt="POINT5 Podcast Logo">
+    <p id="header-subtitle">The official POINT5 Podcast website.</p>
+    <nav>
+      <ul class="header-menu">
+        <li><a href="/watch-listen.html">Watch & Listen</a></li>
+        <li><a href="/community.html">Community Chat</a></li>
+        <li><a href="/schedule.html">Schedule Podcast</a></li>
+        <li><a href="/email.html">Send Email</a></li>
+        <li><a href="/donate.html">Donate</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <div class="container">
+
+    <!-- Welcome Section -->
+    <section class="welcome">
+      <h2 id="welcome-heading"></h2>
+      <p id="welcome-text"></p>
+    </section>
+
+    <!-- Communities Section -->
+    <section class="communities" id="communities">
+        <h2 id="communities-heading">Community</h2>
+        <p id="communities-text"></p>
+        <div class="communities-text">
+          <div class="communities-breakdown">
+            
+          </div>
+
+        </div>
+
+        <div class="community-links">
+            <a id="discord-link" href="#" target="_blank">
+            <img src="discord-icon.png" alt="Join our Discord">
+            </a>
+            <a id="slack-link" href="" target="_blank">
+            <img src="slack-icon.png" alt="Join our Slack">
+            </a>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="booking">
+      <h2 id="booking-heading"></h2>
+      <form action="https://formspree.io/f/mgolqzzj" method="POST">
+        <input type="text" name="name" placeholder="full name" required>
+        <input type="email" name="email" placeholder="email" required>
+        <textarea name="message" rows="5" placeholder="
+        - Quick background
+        - Links 
+        - What you promote" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- Links Section -->
+    <section class="publishLocation">
+        <h2 id="publishLocation-heading"></h2>
+        <p id="publishLocation-text"></p>
+            <div class="publishLocation-links">
+                <a id="youtube-link" href="#" target="_blank">
+                <img src="youtube-icon.png" alt="Youtube">
+                </a>
+                <a id="spotify-link" href="#" target="_blank">
+                <img src="spotify-icon.png" alt="Spotify">
+                </a>
+            </div>
+    </section>
+
+    <!-- Guidance Section -->
+    <section class="guidance">
+      <h2 id="guidance-heading"></h2>
+      <p id="guidance-text"></p>
+    </section>
+
+    <!-- Host Section -->
+    <section class="host">
+      <h2 id="host-heading"></h2>
+      <div class="host-content">
+        <div class="host-image">
+          <img id="host-photo" src="host.jpg" alt="Host Photo">
+        </div>
+        <div class="host-info">
+          <p id="host-bio"></p>
+          <div class="social-links" id="host-social"></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 POINT5 Podcast. All rights reserved.</p>
+    <div class="legal">
+      <ul class="legal-menu">
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms and Conditions</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

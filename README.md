@@ -1,2 +1,2 @@
-# point5podcast.com
-Public website files for point5podcast.com. 
+# point5PodcastWebsite
+basic static website for the podcast
