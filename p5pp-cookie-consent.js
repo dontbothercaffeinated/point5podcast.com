@@ -70,7 +70,7 @@
     banner.innerHTML = `
       <div class="p5pp-cookie-content">
         We use cookies for analytics to improve your experience. 
-        <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>
+        <a href="/privacy.html" target="_blank">Privacy Policy</a>
         <div class="p5pp-cookie-buttons">
           <button id="p5pp-accept">Accept</button>
           <button id="p5pp-decline">Decline</button>
