@@ -18,7 +18,7 @@ a {
   flex-wrap: wrap;       /* allows items to wrap to next line on small screens */
   justify-content: center; /* distribute items evenly */
   align-items: center;
-  gap: 10px;             /* space between items */
+  gap: 20px;             /* space between items */
   list-style: none;
   padding: 0;
   margin: 1rem 0 0 0;
@@ -33,8 +33,6 @@ a {
   border-radius: 10px;
   border: 2px solid #ffffff8d;
   color: #fff;
-  margin-top: 10px;
-  margin-bottom: 10px;
   text-decoration: none;
 }
 
