@@ -18,7 +18,7 @@ a {
   flex-wrap: wrap;       /* allows items to wrap to next line on small screens */
   justify-content: center; /* distribute items evenly */
   align-items: center;
-  gap: 20px;             /* space between items */
+  gap: 20px 20px;             /* space between items */
   list-style: none;
   padding: 0;
   margin: 1rem 0 0 0;
