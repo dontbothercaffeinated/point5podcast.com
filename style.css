@@ -519,18 +519,18 @@ footer {
 
 /* cookie banner css */
 
-/* Unique CSS prefix to avoid conflicts */
+/* POINT5 Podcast cookie banner - unique prefix to avoid conflicts */
 #p5pp-cookie-banner {
-  position: fixed;
+  position: fixed;      /* stay fixed at the bottom */
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #1e1e1e;
-  color: #fff;
+  background-color: #1e1e1e; /* dark background for contrast */
+  color: #ffffff;            /* white text */
   font-family: Arial, sans-serif;
   font-size: 14px;
-  z-index: 9999;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  z-index: 9999;             /* appear above all content */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
 }
 
 #p5pp-cookie-banner .p5pp-cookie-content {
@@ -540,7 +540,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* ensures it wraps on small screens */
 }
 
 #p5pp-cookie-banner a {
@@ -564,7 +564,7 @@ footer {
   background-color: #339bd8;
 }
 
-/* For small screens */
+/* Responsive for mobile devices */
 @media (max-width: 600px) {
   #p5pp-cookie-banner .p5pp-cookie-content {
     flex-direction: column;
