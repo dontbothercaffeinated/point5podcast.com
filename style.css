@@ -131,6 +131,13 @@ section p {
   /* color: #e2a9f1; */
 }
 
+/* Mobile tweak */
+@media(max-width: 600px) {
+  section p {
+    text-align: left; 
+  }
+}
+
 /* Welcome Section */
 .welcome, .guidance {
   padding: 2rem;
@@ -339,6 +346,13 @@ footer {
   text-align:justify;
 }
 
+/* Mobile tweak */
+@media(max-width: 600px) {
+  .communities {
+    text-align: left; 
+  }
+}
+
 .communities#schedule-page {
   /* background: #ffffffec; */
   border: none;
@@ -385,6 +399,13 @@ footer {
   /* border-radius: 8px; */
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   text-align:justify;
+}
+
+/* Mobile tweak */
+@media(max-width: 600px) {
+  .publishLocation {
+    text-align: left; 
+  }
 }
 
 .publishLocation#watch-listen {
