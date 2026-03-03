@@ -273,6 +273,13 @@ footer {
   margin-bottom: 1.5rem;
 }
 
+/* Mobile tweak */
+@media(max-width: 600px) {
+  .host h2 {
+    text-align: left; 
+  }
+}
+
 .host-content {
   display: flex;
   align-items: center;
