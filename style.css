@@ -69,7 +69,7 @@ header img#header-logo {
 /* Mobile tweak */
 @media(max-width: 600px) {
   header img#header-logo {
-    max-width: 180px;  /* slightly smaller for narrow screens */
+    max-width: 40%; /* slightly smaller for narrow screens */
   }
 }
 
