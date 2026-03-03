@@ -65,7 +65,7 @@
   // -------------------------------
   function createBanner() {
     const banner = document.createElement("div");
-    banner.id = "p5pp-cookie-banner";
+    banner.id = "p5pp-cookie-banner"; // matches the CSS
     banner.innerHTML = `
       <div class="p5pp-cookie-content">
         We use cookies for analytics to improve your experience. 
@@ -76,21 +76,19 @@
         </div>
       </div>
     `;
-    document.body.appendChild(banner);
+    document.body.appendChild(banner); // append to body
 
-    // Accept button
     document.getElementById("p5pp-accept").onclick = function() {
-      localStorage.setItem(consentKey, "accepted");
-      loadGA();
-      banner.remove();
+      localStorage.setItem("p5pp_cookie_consent", "accepted");
+      loadGA(); // GA only loads after accept
+      banner.remove(); // remove banner after consent
     };
 
-    // Decline button
     document.getElementById("p5pp-decline").onclick = function() {
-      localStorage.setItem(consentKey, "declined");
-      banner.remove();
+      localStorage.setItem("p5pp_cookie_consent", "declined");
+      banner.remove(); // remove banner after decline
     };
-  }
+}
 
   // -------------------------------
   // 4. Check existing consent
