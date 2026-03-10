@@ -469,6 +469,11 @@ footer {
   }
 }
 
+.all-distribution-locations {
+  display: flex;
+  justify-content: center;
+}
+
 
 
 
