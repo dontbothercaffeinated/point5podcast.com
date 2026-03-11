@@ -430,7 +430,8 @@ footer {
   color: #fff;
 }
 
-.publishLocation-links {
+/* Reusable bubble links component */
+.bubble-links {
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -438,32 +439,24 @@ footer {
   flex-wrap: wrap;
 }
 
-.publishLocation-links a img {
+.bubble-links a img {
   width: 120px;
   height: 60px;
   object-fit: contain;
   transition: transform 0.2s;
   background-color: #fff;
-  padding-right:50px;
-  padding-left:50px;
+  padding-left: 50px;
+  padding-right: 50px;
   border-radius: 30px;
 }
 
-.publishLocation-links a img:hover {
+.bubble-links a img:hover {
   transform: scale(1.1);
 }
 
-/* Responsive adjustments */
+/* Mobile adjustments */
 @media(max-width: 600px) {
-  .community-links a img {
-    width: 90px;
-    height: 90px;
-  }
-}
-
-/* Responsive adjustments */
-@media(max-width: 600px) {
-  .publishLocation-links a img {
+  .bubble-links a img {
     width: 90px;
     height: 90px;
   }
