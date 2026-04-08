@@ -9,14 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 
-  <!-- For .png file -->
   <link rel="icon" href="favicon.png" type="image/png">
-
 </head>
 <body>
   <header>
@@ -36,29 +31,63 @@
     </nav>
   </header>
 
-
   <div class="container">
-
 
     <!-- Communities Section -->
     <section class="communities" id="schedule-page">
         <h2 id="communities-heading">Want to be a guest?</h2>
 
-        <!-- Cal inline embed code begins -->
-        <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-1hourpodcast"></div>
+        <!-- Toggle Switch -->
+        <div class="calendar-toggle">
+            <button id="btn-evening" class="toggle-btn active">Evening Calendar (Recommended)</button>
+            <button id="btn-daytime" class="toggle-btn">Daytime Calendar</button>
+        </div>
+
+        <!-- Evening Calendar Container (Default) -->
+        <div id="calendar-evening" class="calendar-container">
+            <div class="schedule-introduction">This calendar is the preferred calendar for booking. Evening slots are unlimited per month. I only have 8 daytime slots available for booking meeting rooms. If you can find a time that works on this calendar, I would greatly appreciate it. If you need a daytime slot, you can use the button above to see available daytime slots. If there isn't anything showing on that calendar, it's because the maximum number of bookings have been made for that month.</div>
+            <br>
+            <div class="schedule-introduction">[The Calendar Might Take a Moment to Load]</div>
+            <br>
+            <div style="width:100%; height:720px; overflow:scroll" id="my-cal-inline-evening"></div>
+        </div>
+
+        <!-- Daytime Calendar Container -->
+        <div id="calendar-daytime" class="calendar-container" style="display: none;">
+            <div class="schedule-introduction">This is the daytime calendar. There are 8 maximum bookings available per month on this calendar. If times aren't available, it's because the maximum bookings have been made for the month selected. You can use the evening calendar to find an available time, as there are many more slots available.</div>
+            <br>
+            <div class="schedule-introduction">[The Calendar Might Take a Moment to Load]</div>
+            <br>
+            <div style="width:100%; height:720px; overflow:scroll" id="my-cal-inline-daytime"></div>
+        </div>
+
+        <!-- ==================== EVENING CALENDAR EMBED ==================== -->
         <script type="text/javascript">
           (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-        Cal("init", "1hourpodcast", {origin:"https://app.cal.com"});
 
-          Cal.ns["1hourpodcast"]("inline", {
-            elementOrSelector:"#my-cal-inline-1hourpodcast",
+          Cal("init", "evening", {origin:"https://app.cal.com"});
+
+          Cal.ns["evening"]("inline", {
+            elementOrSelector: "#my-cal-inline-evening",
+            config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+            calLink: "kevinnordio/1-hour-recording-point5-podcast-eveningunlimited",
+          });
+
+          Cal.ns["evening"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+        </script>
+
+        <!-- ==================== DAYTIME CALENDAR EMBED ==================== -->
+        <script type="text/javascript">
+          Cal("init", "daytime", {origin:"https://app.cal.com"});
+
+          Cal.ns["daytime"]("inline", {
+            elementOrSelector: "#my-cal-inline-daytime",
             config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
             calLink: "kevinnordio/1hourpodcast",
           });
 
-          Cal.ns["1hourpodcast"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-          </script>
-      <!-- Cal inline embed code ends -->
+          Cal.ns["daytime"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+        </script>
 
         <p id="communities-text">Contact me on the server options by clicking one of them below:</p>
 
@@ -78,11 +107,9 @@
         <p id="communities-text">Different updates are provided in different channels. This makes it easy for you to mute specific notifications. More importantly, you receive the ones your need.</p>
         <p id="communities-text">Real time text, voice, and video chat is available in one place. We can share anything in these chats leading up to the recording.</p>
         <p id="communities-text">Chats are available after the podcast. This is great for us to pickup where we left off, if we need to. Social media accounts are always changing, and information can be hard to find. This way, everything is tied to the server. If it gets too busy, I can organize it.</p>
+        
         <div class="communities-text">
-          <div class="communities-breakdown">
-            
-          </div>
-
+          <div class="communities-breakdown"></div>
         </div>
     </section>
 
@@ -109,9 +136,32 @@
     </div>
   </footer>
 
-  <!-- cookie consent -->
-
   <script src="p5pp-cookie-consent.js"></script>
+
+  <!-- Toggle Logic -->
+  <script>
+    const btnEvening = document.getElementById('btn-evening');
+    const btnDaytime = document.getElementById('btn-daytime');
+    const calEvening = document.getElementById('calendar-evening');
+    const calDaytime = document.getElementById('calendar-daytime');
+
+    function showEvening() {
+      calEvening.style.display = 'block';
+      calDaytime.style.display = 'none';
+      btnEvening.classList.add('active');
+      btnDaytime.classList.remove('active');
+    }
+
+    function showDaytime() {
+      calEvening.style.display = 'none';
+      calDaytime.style.display = 'block';
+      btnDaytime.classList.add('active');
+      btnEvening.classList.remove('active');
+    }
+
+    btnEvening.addEventListener('click', showEvening);
+    btnDaytime.addEventListener('click', showDaytime);
+  </script>
 
 </body>
 </html>
